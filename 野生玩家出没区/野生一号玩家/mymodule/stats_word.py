@@ -51,17 +51,22 @@ def stats_text_cn(text):
 ###########4种情况分割字符串#############调用函数，合并结果############
 def stats_text(text):                           
             for s in text:
-                if s>=u'\u4e00' and s<=u'\u9fa5':
+                while s>=u'\u4e00' and s<=u'\u9fa5':
                            a=text.find(s)
-                elif s>=u'\u0041' and s<=u'\u007a':
+            for s in text:
+                while s>=u'\u0041' and s<=u'\u007a':
                            b=text.find(s)
             
             if   a<b:
-                zw=text[:a+1]
-                yw=text[a+1:b+1]
+                zw=text[a:b]
+                yw=text[b:]
             elif b<a:
-                yw=text[:b+1]
-                zw=text[b+1:a+1]
+                yw=text[b:a]
+                zw=text[a:]
                      
-            print(stats_text_cn(zw),"wuhuakeshuo",tats_text_en(yw))
+            print(stats_text_cn(zw),"wuhuakeshuo",tats_text_en(yw),a,b,text[b:])
             return 
+
+text='愚公是傻逼，我草你妈的。han gong yu gong tie hanghang'
+import stats_word
+stats_word.stats_text(text)
