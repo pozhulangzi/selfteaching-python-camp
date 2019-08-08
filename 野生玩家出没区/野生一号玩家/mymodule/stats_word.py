@@ -64,9 +64,6 @@ def stats_text(text):
                 yw=text[b:a]
                 zw=text[a:]
                      
-            print(stats_text_cn(zw),"wuhuakeshuo",tats_text_en(yw),a,b,text[b:])
+            print(stats_text_en(yw),stats_text_cn(zw))
+)
             return 
-
-text='愚公是傻逼，我草你妈的。han gong yu gong tie hanghang'
-import stats_word
-stats_word.stats_text(text)
