@@ -22,7 +22,7 @@ Namespaces are one honking great idea -- let's do more of those!
 '''
 #去除标点
 import re
-text_stats=re.sub("[-,*,.,,,!]"," ",text)
+text_stats=re.sub("[-*.,!]"," ",text)
 text_stats=text_stats.replace("'s"," is").replace("'t"," it").replace("'re"," are").replace("n't"," not")
 
 #转字符串为列表
